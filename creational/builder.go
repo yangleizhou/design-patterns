@@ -1,9 +1,11 @@
-package patterns
+package creational
 
 import "fmt"
 
 //The intent of the Builder design pattern is to separate the construction of a complex object from its representation.
 //By doing so the same construction process can create different representations.
+
+//
 
 //编译期将*MacBookBuilder 转换为Builder
 //如果接口Builder发生变化，而MacBookBuilder没有变化，编译将不能通过
@@ -17,7 +19,7 @@ type Builder interface {
 	GetProduct() ComputerProduct
 }
 
-// Director 负责组装方法
+// Director 指挥者,负责组装方法
 type Director struct {
 	builder Builder
 }
@@ -28,14 +30,14 @@ func (d *Director) MakeProduct(builder Builder) {
 	d.builder.SetType().SetCPU().SetOS()
 }
 
-// ComputerProduct 最终对象
+// ComputerProduct 产品,最终对象
 type ComputerProduct struct {
 	Type string
 	CPU  string
 	OS   string
 }
 
-// MacBookBuilder 苹果笔记本
+// MacBookBuilder (具体建造者)苹果笔记本
 type MacBookBuilder struct {
 	computer ComputerProduct
 }

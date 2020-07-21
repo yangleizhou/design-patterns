@@ -1,4 +1,4 @@
-package patterns
+package creational
 
 import "testing"
 
