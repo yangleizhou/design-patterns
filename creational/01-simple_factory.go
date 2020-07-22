@@ -14,10 +14,10 @@ func (sf *SimpleFactory) CreatProduct(os string) SimpleIComputerProduct {
 	switch os {
 	case "mac":
 		cp := NewSimpleComputerProduct()
-		MakeProduct(&cp.computer,
-			SetType("top"),
-			SetCPU("intel i7"),
-			SetOS(os))
+		MakeComputerProduct(&cp.computer,
+			SetComputerType("top"),
+			SetComputerCPU("intel i7"),
+			SetComputerOS(os))
 		return cp
 	}
 	return nil

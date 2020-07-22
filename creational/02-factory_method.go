@@ -4,6 +4,9 @@ import "fmt"
 
 // 使一个类的实例化(具体产品创建)延迟到其子类(具体工厂)中完成, 定义一个用于创建对象的接口, 让子类决定将哪一个类实例化
 
+var _ FactoryMethod = (*FactoryMethodMacBookProduct)(nil)
+var _ FactoryMethodProduct = (*FactoryMethodMacBookProduct)(nil)
+
 // FactoryMethod 抽象工厂,定义具体工厂的公共接口
 type FactoryMethod interface {
 	Create() FactoryMethodProduct
@@ -11,9 +14,9 @@ type FactoryMethod interface {
 
 // FactoryMethodProduct 抽象产品,定义具体产品的公共接口
 type FactoryMethodProduct interface {
-	SetCPU(cpu string)
-	SetType(typ string)
-	SetOS(os string)
+	SetComputerCPU(cpu string)
+	SetComputerType(typ string)
+	SetComputerOS(os string)
 	GetProduct() *ComputerProduct
 }
 
@@ -38,8 +41,8 @@ func (mbp *FactoryMethodMacBookProduct) GetProduct() *ComputerProduct {
 // FactoryMethodMakeProduct 工厂内部流程
 func FactoryMethodMakeProduct(fm FactoryMethod, typ, cpu, os string) *ComputerProduct {
 	obj := fm.Create()
-	obj.SetCPU(cpu)
-	obj.SetOS(os)
-	obj.SetType(typ)
+	obj.SetComputerCPU(cpu)
+	obj.SetComputerOS(os)
+	obj.SetComputerType(typ)
 	return obj.GetProduct()
 }
