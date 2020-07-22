@@ -1,8 +1,11 @@
 package creational
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestSimpleFactory(t *testing.T) {
 	sf := &SimpleFactory{}
-	sf.CreatProduct("mac")
+	p := sf.CreatProduct("mac").GetProduct()
+	t.Logf("TestSimpleFactory computer: type = %v,cpu = %v,os = %v", p.Type, p.CPU, p.OS)
 }

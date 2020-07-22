@@ -36,3 +36,18 @@ func SetOS(os string) option {
 		cp.OS = os
 	}
 }
+
+// SetCPU 设置cpu
+func (cp *ComputerProduct) SetCPU(cpu string) {
+	cp.CPU = cpu
+}
+
+// SetOS 设置os
+func (cp *ComputerProduct) SetOS(os string) {
+	cp.OS = os
+}
+
+// SetType 设置type
+func (cp *ComputerProduct) SetType(typ string) {
+	cp.Type = typ
+}
