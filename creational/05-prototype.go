@@ -2,29 +2,20 @@ package creational
 
 //用一个已经创建的实例作为原型，通过复制该原型对象来创建一个和原型相同或相似的新对象，同时又能保证性能
 
+var _ Cloneable = (*Type)(nil)
+
 //Cloneable 抽象原型类：规定了具体原型对象必须实现的接口
 type Cloneable interface {
 	Clone() Cloneable
 }
 
-//Type1 具体原型类,实现抽象原型类的 clone() 方法
-type Type1 struct {
+//Type 具体原型类,实现抽象原型类的 clone() 方法
+type Type struct {
 	name string
 }
 
 // Clone 复制新对象
-func (t *Type1) Clone() Cloneable {
-	ct := *t
-	return &ct
-}
-
-//Type2 具体原型类,实现抽象原型类的 clone() 方
-type Type2 struct {
-	name string
-}
-
-// Clone 复制新对象
-func (t *Type2) Clone() Cloneable {
+func (t *Type) Clone() Cloneable {
 	ct := *t
 	return &ct
 }
@@ -51,5 +42,5 @@ var pm PropotypeManager
 
 func init() {
 	pm.prototypes = make(map[string]Cloneable)
-	pm.prototypes["t1"] = &Type1{name: "t1"}
+	pm.prototypes["t1"] = &Type{name: "t1"}
 }
