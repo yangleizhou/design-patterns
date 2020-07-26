@@ -1,6 +1,6 @@
  
 VSCode 运行go test显示打印日志 
-1.文件>>首选项>>设置>>工作区设置>>在setting.json中编辑 go.testFlags": ["-v"]
+1.文件>>首选项>>设置>>工作区设置>>在setting.json中编辑 "go.testFlags": ["-v"]
 
 设计模式进行设计时需要遵循以下的原则:
 ----

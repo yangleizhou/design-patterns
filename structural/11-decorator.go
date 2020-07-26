@@ -4,6 +4,10 @@ import "fmt"
 
 //在不改变现有对象结构情况下(在不影响其他对象的情况下),动态地给一个对象增加一些职责，即增加其额外的功能
 
+var _ Man = (*SingleMan)(nil)
+var _ AttachePropertiesDecorator = (*CarDecoratorImpl)(nil)
+var _ AttachePropertiesDecorator = (*SchoolDecoratorImpl)(nil)
+
 //Man 抽象构件 - Component
 //定义一个对象接口或抽象类，以规范需要装饰的主体类，比如：人
 type Man interface {
