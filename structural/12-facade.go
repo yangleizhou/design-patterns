@@ -4,6 +4,7 @@ import "fmt"
 
 //为多个复杂的子系统提供一个一致的接口，使这些子系统更加容易被访问
 
+var _ FacadeService = (*BuyService)(nil)
 var _ FacadeService = (*OrderService)(nil)
 var _ FacadeService = (*PayService)(nil)
 var _ FacadeService = (*LogisticsService)(nil)
