@@ -1,6 +1,8 @@
 package structural
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestComposite(t *testing.T) {
 	root := NewComponent(CompositeNode, "root")
@@ -16,6 +18,8 @@ func TestComposite(t *testing.T) {
 	p1.AddChild(p2)
 	p1.AddChild(c2)
 	p2.AddChild(c1)
+
+	root.Print("")
 }
 
 func TestCompositeRing(t *testing.T) {
@@ -24,4 +28,5 @@ func TestCompositeRing(t *testing.T) {
 
 	root.AddChild(p1)
 	p1.AddChild(root)
+	root.Print("")
 }
