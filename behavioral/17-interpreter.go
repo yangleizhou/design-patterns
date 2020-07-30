@@ -6,6 +6,12 @@ import (
 	"strings"
 )
 
+//解释器模式实现一个表达式接口，该接口解释一个特定的上下文。通常用于SQL解析和符号处理引擎
+
+var _ Expression = (*Context)(nil)
+var _ Expression = (*AddExpression)(nil)
+var _ Expression = (*SubExpression)(nil)
+
 //Expression  定义解释器的接口，约定解释器的解释操作，主要包含解释方法 interpret()
 type Expression interface {
 	Interpreter() int
@@ -22,6 +28,7 @@ func (c *Context) Interpreter() int {
 	return c.val
 }
 
+// Print 打印值
 func (c *Context) Print() {
 	fmt.Printf("%d", c.val)
 }
@@ -29,7 +36,6 @@ func (c *Context) Print() {
 //AddExpression 表达式
 type AddExpression struct {
 	left, right Expression
-	deepth      string //打印日志用
 }
 
 // Interpreter 实现
@@ -37,7 +43,7 @@ func (add *AddExpression) Interpreter() int {
 	return add.left.Interpreter() + add.right.Interpreter()
 }
 
-// Print
+// Print 打印表达式
 func (add *AddExpression) Print() {
 	add.left.Print()
 	fmt.Print("+")
@@ -54,7 +60,7 @@ func (sub *SubExpression) Interpreter() int {
 	return sub.left.Interpreter() - sub.right.Interpreter()
 }
 
-// Print da
+// Print 打印表达式
 func (sub *SubExpression) Print() {
 	sub.left.Print()
 	fmt.Print("-")
@@ -87,17 +93,6 @@ func (p *Parser) Parse(exp string) {
 	}
 }
 
-// Print 打印语法树
-func (p *Parser) Print() {
-	p.pre.Print()
-}
-
-//GetResult 获取结构
-func (p *Parser) GetResult() {
-	p.Print()
-	fmt.Printf(" = %d\n", p.pre.Interpreter())
-}
-
 // newAdd 获取Add Expression
 func (p *Parser) newAdd(i int) Expression {
 	val, _ := strconv.Atoi(p.exp[i])
@@ -114,4 +109,15 @@ func (p *Parser) newSub(i int) Expression {
 func (p *Parser) Val(i int) Expression {
 	val, _ := strconv.Atoi(p.exp[i])
 	return &Context{val: val}
+}
+
+// Print 打印语法树
+func (p *Parser) Print() {
+	p.pre.Print()
+}
+
+//GetResult 获取结构
+func (p *Parser) GetResult() {
+	p.Print()
+	fmt.Printf(" = %d\n", p.pre.Interpreter())
 }
