@@ -77,7 +77,6 @@ type Parser struct {
 func (p *Parser) Parse(exp string) {
 	p.exp = strings.Split(exp, " ")
 	var len = len(p.exp)
-	var deepth string
 	for i := 0; i < len; i++ {
 		switch p.exp[i] {
 		case "+":
@@ -89,7 +88,7 @@ func (p *Parser) Parse(exp string) {
 		default:
 			p.pre = p.Val(i)
 		}
-		deepth += " "
+
 	}
 }
 
