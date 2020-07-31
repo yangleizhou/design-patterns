@@ -7,9 +7,10 @@ import (
 
 func TestMemento(t *testing.T) {
 	originator := &Originator{}
-	caretaker := &Caretaker{}
 	originator.SetName("aa")
 	fmt.Println("name = ", originator.GetName())
+
+	caretaker := &Caretaker{}
 	caretaker.Push(originator.NewMemento())
 
 	originator.SetName("AA")
