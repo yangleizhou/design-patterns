@@ -8,7 +8,7 @@ import (
 
 //解释器模式实现一个表达式接口，该接口解释一个特定的上下文。通常用于SQL解析和符号处理引擎
 
-var _ Expression = (*Context)(nil)
+var _ Expression = (*ValContext)(nil)
 var _ Expression = (*AddExpression)(nil)
 var _ Expression = (*SubExpression)(nil)
 
@@ -18,18 +18,18 @@ type Expression interface {
 	Print()
 }
 
-//Context 上下文
-type Context struct {
+//ValContext 上下文
+type ValContext struct {
 	val int
 }
 
 // Interpreter 获取值
-func (c *Context) Interpreter() int {
+func (c *ValContext) Interpreter() int {
 	return c.val
 }
 
 // Print 打印值
-func (c *Context) Print() {
+func (c *ValContext) Print() {
 	fmt.Printf("%d", c.val)
 }
 
@@ -95,19 +95,19 @@ func (p *Parser) Parse(exp string) {
 // newAdd 获取Add Expression
 func (p *Parser) newAdd(i int) Expression {
 	val, _ := strconv.Atoi(p.exp[i])
-	return &AddExpression{left: p.pre, right: &Context{val: val}}
+	return &AddExpression{left: p.pre, right: &ValContext{val: val}}
 }
 
 // newSub 获取Sub Expression
 func (p *Parser) newSub(i int) Expression {
 	val, _ := strconv.Atoi(p.exp[i])
-	return &SubExpression{left: p.pre, right: &Context{val: val}}
+	return &SubExpression{left: p.pre, right: &ValContext{val: val}}
 }
 
 // Val 获取Context Expression
 func (p *Parser) Val(i int) Expression {
 	val, _ := strconv.Atoi(p.exp[i])
-	return &Context{val: val}
+	return &ValContext{val: val}
 }
 
 // Print 打印语法树
