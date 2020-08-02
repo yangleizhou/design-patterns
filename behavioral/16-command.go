@@ -56,7 +56,7 @@ func (invoker *Invoker) AddCommand(list ...Command) {
 	invoker.list = append(invoker.list, list...)
 }
 
-//ExecuteCommand 执行梦命令
+//ExecuteCommand 执行命令
 func (invoker *Invoker) ExecuteCommand() {
 	for _, c := range invoker.list {
 		c.Execute()
