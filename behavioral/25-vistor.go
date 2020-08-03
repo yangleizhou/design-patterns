@@ -64,8 +64,8 @@ func (v *CashierVisitor) Visit(pe *ProductElement) {
 }
 
 // Print 打印小票
-func (v *CashierVisitor) Print() {
-	fmt.Printf("您好,收费员%s为您服务,您购买商品共计%d,谢谢惠顾!\n\n\n", v.Name, v.TotaolPrice)
+func (v *CashierVisitor) Print(name string) {
+	fmt.Printf("您好,顾客:%s,收费员%s为您服务,您购买商品共计%d,谢谢惠顾!\n\n\n", name, v.Name, v.TotaolPrice)
 	v.TotaolPrice = 0
 }
 

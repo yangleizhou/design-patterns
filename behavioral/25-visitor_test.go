@@ -22,7 +22,7 @@ func TestVisitor(t *testing.T) {
 	for _, pe := range containter.list {
 		pe.Accept(cashier)
 	}
-	cashier.Print()
+	cashier.Print(v1.Name)
 
 	for _, pe := range containter.list {
 		pe.Accept(v2)
@@ -30,6 +30,6 @@ func TestVisitor(t *testing.T) {
 	for _, pe := range containter.list {
 		pe.Accept(cashier)
 	}
-	cashier.Print()
+	cashier.Print(v2.Name)
 
 }
