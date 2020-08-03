@@ -2,6 +2,10 @@
 VSCode 运行go test显示打印日志 
 1.文件>>首选项>>设置>>工作区设置>>在setting.json中编辑 "go.testFlags": ["-v"]
 
+UML基本概念：http://c.biancheng.net/view/1319.html
+设计模式UML查看：./go-design-image.jpg
+设计模式之间关系：./design_patterns_relations.jpeg
+
 设计模式进行设计时需要遵循以下的原则:
 ----
 - ## 单一职责原则

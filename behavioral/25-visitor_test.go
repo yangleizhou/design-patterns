@@ -31,5 +31,4 @@ func TestVisitor(t *testing.T) {
 		pe.Accept(cashier)
 	}
 	cashier.Print(v2.Name)
-
 }
