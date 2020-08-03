@@ -14,13 +14,13 @@ var _ Visitor = (*Analysis)(nil)
 //Aggregate 抽象聚合角色，定义存储、添加、删除聚合对象以及创建迭代器对象的接口
 type Aggregate interface {
 	Iterator() Iterator
-	Add(v Visitor)
+	Add(v Visitors)
 	Remove(index int)
 }
 
 //Container 具体聚合角色,实现抽象聚合类，返回一个具体迭代器的实例
 type Container struct {
-	list []Visitor
+	list []Visitors
 }
 
 //Iterator 获取迭代器
@@ -29,7 +29,7 @@ func (c *Container) Iterator() Iterator {
 }
 
 //Add 添加
-func (c *Container) Add(v Visitor) {
+func (c *Container) Add(v Visitors) {
 	c.list = append(c.list, v)
 }
 
@@ -87,12 +87,12 @@ func (iter *iterator) Value() {
 	iter.list[iter.pos].Visit()
 }
 
-// Visitor 对象接口
-type Visitor interface {
+// Visitors 对象接口
+type Visitors interface {
 	Visit()
 }
 
-//Teacher visitor对象
+//Teacher visitors对象
 type Teacher struct{}
 
 //Visit 实现接口
@@ -100,7 +100,7 @@ func (t *Teacher) Visit() {
 	fmt.Println("this is teacher visitor")
 }
 
-//Analysis visitor对象
+//Analysis visitors对象
 type Analysis struct{}
 
 //Visit 实现接口
