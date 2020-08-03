@@ -8,8 +8,8 @@ import (
 
 var _ Aggregate = (*Container)(nil)
 var _ Iterator = (*iterator)(nil)
-var _ Visitor = (*Teacher)(nil)
-var _ Visitor = (*Analysis)(nil)
+var _ Visitors = (*Teacher)(nil)
+var _ Visitors = (*Analysis)(nil)
 
 //Aggregate 抽象聚合角色，定义存储、添加、删除聚合对象以及创建迭代器对象的接口
 type Aggregate interface {
