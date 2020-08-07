@@ -78,7 +78,7 @@
             5.封装性良好，为遍历不同的聚合结构提供一个统一的接口
     - 缺点：由于迭代器模式将存储数据和遍历数据的职责分离，增加新的聚合类需要对应增加新的迭代器类，类的个数成对增加，这在一定程度上增加了系统的复杂性。
 - ## <i id="5"></i>`Mediator 中介者模式`  
-- [Iterator](https://github.com/yangleizhou/design-patterns/tree/master/03-behavioral/05-mediator.go)   
+- [Mediator](https://github.com/yangleizhou/design-patterns/tree/master/03-behavioral/05-mediator.go)   
     - 中介者模式用一个中介对象来封装一系列对象交互，将多对多关联(网状结构)转换成一对多，构成星状结构
     - 中介者模式包含如下角色：
         - Mediator：抽象中介者角色,它是中介者的接口，提供了同事对象注册与转发同事对象信息的抽象方法
