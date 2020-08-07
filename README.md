@@ -46,7 +46,7 @@ VSCode 运行go test显示打印日志
 
 
 
-## 设计模式  
-    - [创建型模式](https://github.com/yangleizhou/design-patterns/tree/master/01-creational)  
-    - [结构型模式](https://github.com/yangleizhou/design-patterns/tree/master/02-structural)    
-    - [行为型模式](https://github.com/yangleizhou/design-patterns/tree/master/03-behavioral)  
+## 设计模式    
+- [创建型模式](https://github.com/yangleizhou/design-patterns/tree/master/01-creational)  
+- [结构型模式](https://github.com/yangleizhou/design-patterns/tree/master/02-structural)    
+- [行为型模式](https://github.com/yangleizhou/design-patterns/tree/master/03-behavioral)  
