@@ -20,6 +20,7 @@
 - [访问者模式](#11)
 
 - ## <i id="1"></i>`Chain of Responsibility 职责链模式`
+-[Chain of Responsibility](https://github.com/yangleizhou/design-patterns/tree/master/03-behavioral/01-chain_responsibility.go)
     - 职责链模式用于分离不同职责，并且动态组合相关职责。请求从链中的一个对象传到下一个对象，直到请求被响应为止。通过这种方式去除对象之间的耦合
     - 职责链模式包含如下角色：
         - Handler：抽象处理者角色，定义一个处理请求的接口，包含抽象处理方法和一个后继连接
