@@ -15,7 +15,7 @@
 - [组合模式](#7)
 
 - ## <i id="1"></i>`Proxy 代理模式`  
-- [Proxy](https://github.com/yangleizhou/design-patterns/tree/master/03-behavioral/01-proxy.go)  
+- [Proxy](https://github.com/yangleizhou/design-patterns/tree/master/02-structural/01-proxy.go)  
     - 代理模式用于延迟处理操作或者在进行实际操作前后对真实对象进行其它处理
     - 代理模式包含如下角色：
         - Subject: 抽象主题类,通过接口或抽象类声明真实主题和代理对象实现的业务方法
@@ -25,7 +25,7 @@
     - 缺点：1.在客户端和目标对象之间增加一个代理对象，会造成请求处理速度变慢
             2.增加了系统的复杂度
 - ## <i id="2"></i>`Adapter 适配器模式`  
-- [Adapter](https://github.com/yangleizhou/design-patterns/tree/master/03-behavioral/02-adapter.go)      
+- [Adapter](https://github.com/yangleizhou/design-patterns/tree/master/02-structural/02-adapter.go)      
     - 将一个类的接口转换成客户希望的另外一个接口，使得原本由于接口不兼容而不能一起工作的那些类能一起工作
     - 适配器模式包含如下角色：
         - Target: 目标接口，当前系统业务所期待的接口，它可以是抽象类或接口
@@ -42,7 +42,7 @@
                 2.与类的适配器模式不同的是，对象的适配器模式不是使用继承关系连接到Adaptee类，而是使用委派关系连接到Adaptee类
         - 缺点：使用复杂,需要引入对象实例,特别是需要重新定义Adaptee行为时需要重新定义Adaptee的子类，并将适配器组合适配
 - ## <i id="3"></i>`Bridge 桥接\柄体\接口模式`  
-- [Bridge](https://github.com/yangleizhou/design-patterns/tree/master/03-behavioral/03-bridge.go)     
+- [Bridge](https://github.com/yangleizhou/design-patterns/tree/master/02-structural/03-bridge.go)     
     - 将抽象与实现分离，使它们可以独立变化。它是用组合关系代替继承关系来实现的，从而降低了抽象和实现这两个可变维度的耦合度
     - 桥接模式包含如下角色：
         - Abstraction:抽象化角色,抽象化给出的定义，并保存一个对实现化对象的引用
@@ -59,7 +59,7 @@
     - 缺点：1.桥接模式的使用会增加系统的理解与设计难度，由于关联关系建立在抽象层，要求开发者一开始就针对抽象层进行设计与编程
             2.桥接模式要求正确识别出系统中两个独立变化的维度，因此其使用范围具有一定的局限性，如何正确识别两个独立维度也需要一定的经验积累
 - ## <i id="4"></i>`Decorator 装饰模式`  
-- [Decorator](https://github.com/yangleizhou/design-patterns/tree/master/03-behavioral/04-decorator.go)    
+- [Decorator](https://github.com/yangleizhou/design-patterns/tree/master/02-structural/04-decorator.go)    
     - 在不改变现有对象结构情况下(在不影响其他对象的情况下),动态地给一个对象增加一些职责，即增加其额外的功能
     - 装饰模式包含如下角色：
         - Component:抽象构件,定义一个对象接口或抽象类，以规范需要装饰的主体类，比如：房子
@@ -73,7 +73,7 @@
             同时还将产生很多具体装饰类。这些装饰类和小对象的产生将增加系统的复杂度，加大学习与理解的难度
             2.这种比继承更加灵活机动的特性，也同时意味着装饰模式比继承更加易于出错，排错也很困难，对于多次装饰的对象，调试时寻找错误可能需要逐级排查，较为烦琐
 - ## <i id="5"></i>`Facade 外观模式`  
-- [Facade](https://github.com/yangleizhou/design-patterns/tree/master/03-behavioral/05-facade.go)  
+- [Facade](https://github.com/yangleizhou/design-patterns/tree/master/02-structural/05-facade.go)  
     - 为多个复杂的子系统提供一个一致的接口，使这些子系统更加容易被访问
     - 外观模式包含如下角色：
         - Facade:外观角色,为多个子系统对外提供一个共同的接口
@@ -85,7 +85,7 @@
             3.更好的划分访问层次
     - 缺点：如果新增子系统，需要修改外观类，违背了"开闭原则"
 - ## <i id="6"></i>`Flyweight 享元模式`  
-- [Flyweight](https://github.com/yangleizhou/design-patterns/tree/master/03-behavioral/06-flyweight.go)    
+- [Flyweight](https://github.com/yangleizhou/design-patterns/tree/master/02-structural/06-flyweight.go)    
     - 运用共享技术来有效地支持大量细粒度对象的复用
     - 享元模式包含如下角色：
         - Flyweight:抽象享元类,抽象享元类声明一个接口，通过它可以接受并作用于外部状态
@@ -100,7 +100,7 @@
     - 缺点：1.元模式使得系统更加复杂，需要分离出内部状态和外部状态，这使得程序的逻辑复杂化
             2.为了使对象可以共享，享元模式需要将享元对象的状态外部化，而读取外部状态使得运行时间变长
 - ## <i id="7"></i>`Composite 组合模式`  
-- [Composite](https://github.com/yangleizhou/design-patterns/tree/master/03-behavioral/07-composite.go)      
+- [Composite](https://github.com/yangleizhou/design-patterns/tree/master/02-structural/07-composite.go)      
     - 将对象组合成树状层次结构，使用户对单个对象和组合对象具有一致的访问性
     - 组合模式包含如下角色：
         - Component:抽象构件角色，组合中的对象声明接口，在适当的情况下，实现所有类共有接口的默认行为。声明一个接口用于访问和管理Component子部件
