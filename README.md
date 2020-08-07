@@ -2,9 +2,9 @@
 VSCode 运行go test显示打印日志 
 1.文件>>首选项>>设置>>工作区设置>>在setting.json中编辑 "go.testFlags": ["-v"]
 
-UML基本概念：http://c.biancheng.net/view/1319.html  
-设计模式UML查看：./go-design-image.jpg  
-设计模式之间关系：./design_patterns_relations.jpeg  
+- [UML基本概念](http://c.biancheng.net/view/1319.html)  
+- [设计模式UML](./go-design-image.jpg ) 
+- [设计模式之间关系](./design_patterns_relations.jpeg ) 
 
 
 设计模式进行设计时需要遵循以下的原则:
@@ -47,6 +47,6 @@ UML基本概念：http://c.biancheng.net/view/1319.html
 
 
 ## 设计模式  
-    - ![创建型模式](https://github.com/yangleizhou/design-patterns/tree/master/01-creational)  
-    - ![结构型模式](https://github.com/yangleizhou/design-patterns/tree/master/02-structural)    
-    - ![行为型模式](https://github.com/yangleizhou/design-patterns/tree/master/03-behavioral)  
+    - [创建型模式](https://github.com/yangleizhou/design-patterns/tree/master/01-creational)  
+    - [结构型模式](https://github.com/yangleizhou/design-patterns/tree/master/02-structural)    
+    - [行为型模式](https://github.com/yangleizhou/design-patterns/tree/master/03-behavioral)  
